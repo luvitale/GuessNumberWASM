@@ -2,6 +2,7 @@ window.onload = load_game;
 
 function load_game() {
 	activate_risk_button();
+	initialize_result_and_attempts();
 	get_random_number();
 }
 
@@ -29,22 +30,32 @@ function guess() {
 var result = document.getElementById("result");
 var attempts = document.getElementById("attempts");
 
+function initialize_result_and_attempts() {
+	result.textContent = "Ingresar un número entero";
+	attempts.textContent = "";
+	document.getElementById("game-style").href = "css/start.css";
+}
+
 function is_smaller() {
 	console.log("It's smaller");
 	result.textContent = "Probá un número más chico";
 	attempts.textContent = "Intentos: " + _getAttempts();
+	document.getElementById("game-style").href = "css/smaller.css";
+	
 }
 
 function is_larger() {
 	console.log("It's larger");
 	result.textContent = "Probá un número más grande";
 	attempts.textContent = "Intentos: " + _getAttempts();
+	document.getElementById("game-style").href = "css/larger.css";
 }
 
 function win() {
 	console.log("You win");
 	result.textContent = "Ganaste. ¡Felicitaciones!";
 	attempts.textContent = "Intentos: " + _getAttempts();
+	document.getElementById("game-style").href = "css/win.css";
 	
 	change_to_restart_button();
 	activate_restart_button();
