@@ -15,6 +15,7 @@ int main(int argc, char ** argv) {
 
 void EMSCRIPTEN_KEEPALIVE getRandomNumber() {
     srand ( time(NULL) );
+	attempts = 0;
     random_number = rand() % 100 + 1;
 }
 
