@@ -10,12 +10,19 @@ body {
 	margin: 1em;
 }
 
+div {
+	margin: 1em auto;
+}
+
 input, button {
 	width: 10em;
 }
 
-#result {
+#result, #attempts {
 	padding: .2em;
+}
+
+#result {
 	background-color: red;
 }
 
