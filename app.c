@@ -2,6 +2,9 @@
 #include <stdlib.h>
 #include <time.h>
 #include <emscripten/emscripten.h>
+#define MENOR -1
+#define MAYOR 1
+#define IGUAL 0
 
 int random_number;
 int attempts = 0;
@@ -17,4 +20,11 @@ void EMSCRIPTEN_KEEPALIVE getRandomNumber() {
 
 int EMSCRIPTEN_KEEPALIVE getAttempts() {
 	return attempts;
+}
+
+int EMSCRIPTEN_KEEPALIVE riskNumber(int number) {
+	attempts++;
+	if (random_number < number) return MENOR;
+	else if (random_number > number) return MAYOR;
+	else return IGUAL;
 }
