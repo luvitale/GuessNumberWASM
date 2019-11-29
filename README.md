@@ -10,7 +10,9 @@
 ## Compilar C en WebAssembly
 
 Generar el código de pegamento de Javascript con el compilador de Emscripten.
-` emcc app.c -s WASM=1  -O3 -o bin/app.js`
+```console
+if not exist bin mkdir bin && emcc app.c -s WASM=1  -O3 -o bin/app.js
+```
 
 - emcc - El compilador Emscripten.
 - app.c - El archivo de entrada que contiene el código C.
@@ -45,16 +47,16 @@ _riskNumber(number);
 Por problemas de cross-origin, para ejecutar el proyecto será necesario un servidor web local. Con Python es posible iniciar uno.
 
  1. Para consultar la versión instalada:
-	```bash
+	```console
 	python -V
 	```
  2. Posteriormente ejecutar el siguiente comando para crear un servidor local:
-	```bash
+	```console
 	# Versión 2.x
-	python -m SimpleHTTPServer 8080
+	python -m SimpleHTTPServer 9000
 
 	# Versión 3.x
-	python -m http.server 8080
+	python -m http.server 9000
 	```
 
 ## Iniciar la aplicación en el navegador
