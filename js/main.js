@@ -3,17 +3,12 @@ window.onload = load_game;
 function load_game() {
 	activate_risk_button();
 	initialize_result_and_attempts();
-	get_random_number();
+	_getRandomNumber();
 }
 
 function activate_risk_button() {
 	var risk_button = document.getElementById("risk");
 	risk_button.addEventListener("click", guess);
-}
-
-function get_random_number() {
-	_getRandomNumber();
-	console.log("Random number loaded");
 }
 
 function guess() {

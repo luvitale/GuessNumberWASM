@@ -5,18 +5,21 @@
 #define MENOR -1
 #define MAYOR 1
 #define IGUAL 0
+#define MAXIMO 100
+#define MINIMO 1
 
 int random_number;
-int attempts = 0;
+int attempts;
 
 int main(int argc, char ** argv) {
     printf("WebAssembly module loaded\n");
 }
 
 void EMSCRIPTEN_KEEPALIVE getRandomNumber() {
-    srand ( time(NULL) );
 	attempts = 0;
-    random_number = rand() % 100 + 1;
+    srand ( time(NULL) );
+    random_number = rand() % (MAXIMO - MINIMO + 1) + MINIMO;
+	printf("Random number loaded\n");
 }
 
 int EMSCRIPTEN_KEEPALIVE getAttempts() {
