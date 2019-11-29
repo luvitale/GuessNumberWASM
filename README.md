@@ -11,7 +11,7 @@
 
 Generar el código de pegamento de Javascript con el compilador de Emscripten.
 ```console
-if not exist bin mkdir bin && emcc app.c -s WASM=1  -O3 -o bin/app.js
+if not exist bin mkdir bin && emcc app.c -s WASM=1 -O3 -o bin/app.js
 ```
 
 - emcc - El compilador Emscripten.
